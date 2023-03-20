@@ -1,12 +1,16 @@
 .wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     min-width: 100px;
     padding: 9px 16px;
     border-radius: 4px;
-    font-weight: 700;
     font-size: 1.6rem;
-    border: 1px solid transparent;
+    font-weight: 700;
     cursor: pointer;
     background-color: var(--white);
+    border: 1px solid transparent;
+    user-select: none;
 
     + .wrapper {
         margin-left: 8px;
@@ -14,41 +18,41 @@
 
     &.disabled {
         pointer-events: none;
-        opacity: 0.6;
-        user-select: none;
+        opacity: 0.5;
     }
 }
 
 .icon + .title,
-.title .icon {
-    margin-left: 9px;
+.title + .icon {
+    margin-left: 8px;
 }
 
-// button types
+.icon {
+    display: inline-block;
+    width: 24px;
+    text-align: center;
+}
+
+// Button types
 .rounded {
     border-radius: 999px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.17);
-    border-color: rgba(22, 24, 35, 0.17);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
+    border-color: rgba(22, 24, 35, 0.12);
 
     &:hover {
-        border-color: rgba(22, 24, 35, 0.3);
-        background-color: rgba(255, 255, 255, 1);
+        border-color: rgba(22, 24, 35, 0.2);
+        background-color: rgba(22, 24, 35, 0.03);
     }
 }
 
 .primary {
-    background-color: var(--primary);
     color: var(--white);
+    background-color: var(--primary);
     border-color: var(--primary);
 
     &:hover {
         border-color: var(--primary);
-        background: linear-gradient(
-                0deg,
-                rgba(0, 0, 0, 0.06),
-                rgba(0, 0, 0, 0.06)
-            ),
-            #fe2c55;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), #fe2c55;
     }
 }
 
@@ -68,7 +72,7 @@
     }
 }
 
-// button sizes
+// Button sizes
 .small {
     min-width: 88px;
     padding: 4px 16px;

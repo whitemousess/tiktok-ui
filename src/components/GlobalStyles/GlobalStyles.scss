@@ -1,14 +1,15 @@
 @import 'normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap');
+
 :root {
     --primary: #fe2c55;
-
-    // default layout
-    --default-layout-header-height: 60px;
-    --default-layout-header-width: 1150px;
     --black: #000;
     --white: #fff;
     --text-color: #333;
+
+    // Default layout
+    --default-layout-header-height: 60px;
+    --default-layout-width: 1150px;
 }
 
 * {
@@ -22,10 +23,11 @@ html {
 }
 
 body {
-    font-size: 1.6rem;
     font-family: 'Nova Mono', monospace;
+    font-size: 1.6rem;
     line-height: 1.5;
-    text-rendering: optimizeSpeed;
+    text-rendering: optimizeLegibility;
+    color: var(--text-color);
 }
 
 button,
