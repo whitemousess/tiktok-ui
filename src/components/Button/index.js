@@ -4,6 +4,8 @@ import styles from './Button.module.scss';
 
 const cx = classNames.bind(styles);
 
+
+// khai báo các dạng trong button
 function Button({
     to,
     href,
@@ -36,14 +38,18 @@ function Button({
         });
     }
 
+
+    // dung thẻ to để thay cho link nội bộ
     if (to) {
         props.to = to;
         Comp = Link;
+    // dung thẻ to để thay cho link mạng
     } else if (href) {
         props.href = href;
         Comp = 'a';
     }
 
+    // class name for  style buttons
     const classes = cx('wrapper', {
         [className]: className,
         primary,
