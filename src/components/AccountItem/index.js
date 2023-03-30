@@ -1,8 +1,12 @@
+// add icon Font Awesome
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import classname and style module.scss
 import classNames from 'classnames/bind';
 import styles from './AccountItem.module.scss';
 
+
+// đặt biến cx để sau này dùng làm style
 const cx = classNames.bind(styles);
 
 function AccountItem() {

@@ -12,7 +12,11 @@ const cx = classNames.bind(styles);
 const defaultFn = () => {};
 
 function Menu({ children, items = [], onChange = defaultFn }) {
+    // dùng useState để khai báo history mặc định
     const [history, setHistory] = useState([{ data: items }]);
+    
+    
+    // trở về popper trước
     const current = history[history.length - 1];
 
     const renderItems = () => {
@@ -36,12 +40,15 @@ function Menu({ children, items = [], onChange = defaultFn }) {
     };
 
     return (
+
+        // Tippy thay cho thanh menu item
         <Tippy
             interactive
             delay={[0, 700]}
             placement="bottom-end"
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
+                   {/* PopperWrapper là items trong tippy */}
                     <PopperWrapper className={cx('menu-popper')}>
                         {history.length > 1 && (
                             <Header
@@ -55,6 +62,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
                     </PopperWrapper>
                 </div>
             )}
+            onHide = {() => setHistory((prev) => prev.slice(0, 1)) }
         >
             {children}
         </Tippy>
