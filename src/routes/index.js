@@ -1,7 +1,7 @@
-// Layouts Header
+// Layouts
 import { HeaderOnly } from '~/components/Layout';
 
-// Router change Pages
+// Pages
 import Home from '~/pages/Home';
 import Following from '~/pages/Following';
 import Profile from '~/pages/Profile';
@@ -10,7 +10,6 @@ import Search from '~/pages/Search';
 
 // Public routes
 const publicRoutes = [
-    // câu lệnh để chèn component vào app thông qua router
     { path: '/', component: Home },
     { path: '/following', component: Following },
     { path: '/profile', component: Profile },
