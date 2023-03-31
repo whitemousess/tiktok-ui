@@ -7,6 +7,8 @@ import Following from '~/pages/Following';
 import Profile from '~/pages/Profile';
 import Upload from '~/pages/Upload';
 import Search from '~/pages/Search';
+import Settings from '~/pages/Settings';
+import Coin from '~/pages/Coin';
 
 // Public routes
 const publicRoutes = [
@@ -14,6 +16,8 @@ const publicRoutes = [
     { path: '/', component: Home },
     { path: '/following', component: Following },
     { path: '/profile', component: Profile },
+    { path: '/settings', component: Settings },
+    { path: '/coin', component: Coin },
     { path: '/upload', component: Upload, layout: HeaderOnly },
     { path: '/search', component: Search, layout: null },
 ];

@@ -5,10 +5,13 @@ import styles from './Menu.module.scss';
 const cx = classNames.bind(styles);
 
 function MenuItem({ data, onClick }) {
-    return (
+    const classes = cx('menu-item', {
+        separate: data.separate,
+    });
 
+    return (
         // lấy dữ liểu để đổ vào popper chữ ảnh và icon
-        <Button className={cx('menu-item')} leftIcon={data.icon} to={data.to} onClick={onClick}>
+        <Button className={classes} leftIcon={data.icon} to={data.to} onClick={onClick}>
             {data.title}
         </Button>
     );
