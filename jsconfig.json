@@ -1,4 +1,3 @@
-// setup link module with module ~/  and file name  .bablerc
 {
   "compilerOptions": {
     "baseUrl": ".",
