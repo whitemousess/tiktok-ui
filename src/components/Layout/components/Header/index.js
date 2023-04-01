@@ -7,7 +7,6 @@ import {
     faMagnifyingGlass,
     faCircleQuestion,
     faCircleXmark,
-    faCloudUpload,
     faEarthAsia,
     faKeyboard,
     faSpinner,
@@ -26,6 +25,8 @@ import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
+import Image from '~/components/Image';
+import { Message, UploadIcon ,MailBox} from '~/components/Icons';
 
 const cx = classNames.bind(styles);
 
@@ -141,9 +142,19 @@ function Header() {
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
-                            <Tippy content="Upload video" placement="bottom" delay={[0, 200]}>
+                            <Tippy content="Upload video" placement="bottom" delay={[0, 0]}>
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    <UploadIcon />
+                                </button>
+                            </Tippy>
+                            <Tippy content="Message" placement="bottom" delay={[0, 0]}>
+                                <button className={cx('action-btn')}>
+                                    <Message />
+                                </button>
+                            </Tippy>
+                            <Tippy content="MailBox" placement="bottom" delay={[0, 0]}>
+                                <button className={cx('action-btn')}>
+                                    <MailBox />
                                 </button>
                             </Tippy>
                         </>
@@ -155,10 +166,11 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('users-avatar')}
                                 src="https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/335264727_1949622308715153_9016707167560481744_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=szY4ezF0_cMAX-P8qX4&_nc_ht=scontent.fhan18-1.fna&oh=00_AfA0ysq3psN188GccubrmLyVASnIro-G93EN2R4j2PnvRQ&oe=642C5CC0"
                                 alt={'Nguyen Van A'}
+                                fallback="https://i.pinimg.com/originals/8b/46/35/8b4635fd93dc6e874f686435da83a210.jpg"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
