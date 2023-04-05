@@ -1,15 +1,11 @@
-import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faEllipsisVertical,
-    faMagnifyingGlass,
     faCircleQuestion,
-    faCircleXmark,
     faEarthAsia,
     faKeyboard,
-    faSpinner,
     faUser,
     faCoins,
     faGear,
@@ -17,16 +13,14 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // optional
-import HeadlessTippy from '@tippyjs/react/headless';
 
 import Button from '~/components/Button';
-import { Wrapper as PopperWrapper } from '~/components/Popper';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
-import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
 import Image from '~/components/Image';
-import { Message, UploadIcon ,MailBox} from '~/components/Icons';
+import { Message, UploadIcon, MailBox } from '~/components/Icons';
+import Search from '../search';
 
 const cx = classNames.bind(styles);
 
@@ -62,14 +56,8 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
-    const [searchResult, setSearchResult] = useState([]);
     const currentUser = true;
 
-    useEffect(() => {
-        setTimeout(() => {
-            setSearchResult([]);
-        }, 0);
-    }, []);
 
     // handle login
     const handleMenuChange = (MenuItem) => {
@@ -111,33 +99,9 @@ function Header() {
                 <Link to="/">
                     <img src={images.logo} alt="Tiktok" to="/" />
                 </Link>
-                <HeadlessTippy
-                    interactive
-                    visible={searchResult.length > 0}
-                    render={(attrs) => (
-                        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                            <PopperWrapper>
-                                <h4 className={cx('search-title')}>Accounts</h4>
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                            </PopperWrapper>
-                        </div>
-                    )}
-                >
-                    <div className={cx('search')}>
-                        <input placeholder="Search accounts and videos" spellCheck={false} />
-                        <button className={cx('clear')}>
-                            <FontAwesomeIcon icon={faCircleXmark} />
-                        </button>
-                        <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
 
-                        <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </button>
-                    </div>
-                </HeadlessTippy>
+                {/* search */}
+                <Search />
 
                 <div className={cx('actions')}>
                     {currentUser ? (
@@ -155,6 +119,7 @@ function Header() {
                             <Tippy content="MailBox" placement="bottom" delay={[0, 0]}>
                                 <button className={cx('action-btn')}>
                                     <MailBox />
+                                    <span className={cx('badge')}>12</span>
                                 </button>
                             </Tippy>
                         </>
@@ -170,7 +135,7 @@ function Header() {
                                 className={cx('users-avatar')}
                                 src="https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/335264727_1949622308715153_9016707167560481744_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=szY4ezF0_cMAX-P8qX4&_nc_ht=scontent.fhan18-1.fna&oh=00_AfA0ysq3psN188GccubrmLyVASnIro-G93EN2R4j2PnvRQ&oe=642C5CC0"
                                 alt={'Nguyen Van A'}
-                                fallback="https://i.pinimg.com/originals/8b/46/35/8b4635fd93dc6e874f686435da83a210.jpg"
+                                // fallback="https://i.pinimg.com/originals/8b/46/35/8b4635fd93dc6e874f686435da83a210.jpg"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
