@@ -15,7 +15,8 @@ const publicRoutes = [
     // câu lệnh để chèn component vào app thông qua router
     { path: '/', component: Home },
     { path: '/following', component: Following },
-    { path: '/profile', component: Profile },
+    // link profile by nickname
+    { path: '/@:nickname', component: Profile },
     { path: '/settings', component: Settings },
     { path: '/coin', component: Coin },
     { path: '/upload', component: Upload, layout: HeaderOnly },
