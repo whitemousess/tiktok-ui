@@ -43,7 +43,38 @@ const MENU_ITEMS = [
                     code: 'vi',
                     title: 'Tiếng việt',
                 },
+                {
+                    title: 'language',
+                    code: 'CN',
+                    title: 'China',
+                },{
+                    title: 'language',
+                    code: 'CA',
+                    title: 'Canada',
+                },{
+                    title: 'language',
+                    code: 'BE',
+                    title: 'BELGIUM',
+                },{
+                    title: 'language',
+                    code: 'AL',
+                    title: 'ALBANIA',
+                },{
+                    title: 'language',
+                    code: 'AO',
+                    title: 'ANGOLA',
+                },{
+                    title: 'language',
+                    code: 'AU',
+                    title: 'AUSTRALIA',
+                },{
+                    title: 'language',
+                    code: 'CG',
+                    title: 'CONGO',
+                },
+                
             ],
+            
         },
     },
     {
