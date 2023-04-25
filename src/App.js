@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // setup router to change page when onclick
 import { publicRoutes } from '~/routes';
 // import DefaultLayout 
-import { DefaultLayout } from '~/components/Layout';
+import { DefaultLayout } from '~/layouts';
 
 function App() {
     return (

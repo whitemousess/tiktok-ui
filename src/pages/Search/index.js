@@ -1,5 +1,5 @@
-function Search() {
-    return <h2>Search page</h2>;
+function Profile() {
+    return <h2>Profile page</h2>;
 }
 
-export default Search;
+export default Profile;
