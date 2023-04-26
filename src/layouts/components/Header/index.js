@@ -167,7 +167,7 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={cx('users-avatar')}
-                                src="https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/335264727_1949622308715153_9016707167560481744_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=szY4ezF0_cMAX-P8qX4&_nc_ht=scontent.fhan18-1.fna&oh=00_AfA0ysq3psN188GccubrmLyVASnIro-G93EN2R4j2PnvRQ&oe=642C5CC0"
+                                src="https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/335264727_1949622308715153_9016707167560481744_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=G4QABx3ENhkAX9MkSw8&_nc_ht=scontent.fhan18-1.fna&oh=00_AfBQC7jv29ftg53BMPZpP74xuK3O4QLykovRY2rxLFRH7g&oe=644DFB00"
                                 alt={'Nguyen Van A'}
                                 // fallback="https://i.pinimg.com/originals/8b/46/35/8b4635fd93dc6e874f686435da83a210.jpg"
                             />
