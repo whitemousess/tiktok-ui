@@ -9,9 +9,9 @@ import Home from '~/pages/Home';
 import Following from '~/pages/Following';
 import Profile from '~/pages/Profile';
 import Upload from '~/pages/Upload';
-import Search from '~/pages/Search';
 import Settings from '~/pages/Settings';
 import Coin from '~/pages/Coin';
+import Live from '~/pages/Live';
 
 // Public routes
 const publicRoutes = [
@@ -23,7 +23,7 @@ const publicRoutes = [
     { path: config.routes.settings, component: Settings },
     { path: config.routes.coin, component: Coin },
     { path: config.routes.upload, component: Upload, layout: HeaderOnly },
-    { path: config.routes.search, component: Search },
+    { path: config.routes.live, component: Live },
 ];
 
 const privateRoutes = [];

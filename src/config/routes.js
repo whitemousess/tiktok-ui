@@ -8,6 +8,7 @@ const routes = {
     coin: '/coin',
     upload: '/upload',
     search: '/@:nickname',
+    live: '/live',
 }
 
 export default routes;

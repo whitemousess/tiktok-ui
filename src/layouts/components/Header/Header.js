@@ -89,7 +89,7 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
-    const currentUser = false;
+    const currentUser = true;
 
 
     // handle login
@@ -141,8 +141,8 @@ function Header() {
                     {currentUser ? (
                         <>
                             <Tippy content="Upload video" placement="bottom" delay={[0, 0]}>
-                                <button className={cx('action-btn')}>
-                                    <UploadIcon />
+                                <button className={cx('action-btn')}  >
+                                    <Link to={config.routes.upload}><UploadIcon /></Link>
                                 </button>
                             </Tippy>
                             <Tippy content="Message" placement="bottom" delay={[0, 0]}>
