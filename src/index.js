@@ -13,7 +13,7 @@ root.render(
         <GlobalStyles>
             {/* it's file name index.js */}
             <App />
-        </GlobalStyles>
+        </GlobalStyles>,
     </React.StrictMode>,
 );
 

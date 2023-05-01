@@ -89,7 +89,7 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
-    const currentUser = true;
+    const currentUser = false;
 
 
     // handle login
@@ -130,7 +130,7 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 {/* how to use Config */}
-                <Link to={config.routes.home} className={cx('logo-link')}>
+                <Link to={config.routes.home} onClick={() => config.routes.home.reload()} className={cx('logo-link')}>
                     <img src={images.logo} alt="Tiktok" />
                 </Link>
 

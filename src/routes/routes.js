@@ -19,6 +19,7 @@ const publicRoutes = [
     { path: config.routes.home, component: Home },
     { path: config.routes.following, component: Following },
     // link profile by nickname
+    { path: config.routes.search, component: Profile },
     { path: config.routes.profile, component: Profile },
     { path: config.routes.settings, component: Settings },
     { path: config.routes.coin, component: Coin },
