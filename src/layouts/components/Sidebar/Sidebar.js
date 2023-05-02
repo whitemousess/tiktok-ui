@@ -18,6 +18,7 @@ import Discover from '~/components/Discover';
 import FooterSidebar from './FooterSidebar';
 import Following from '~/components/Following';
 import SuggestedAccounts from '~/components/SuggestedAccounts';
+import LoginSideBar from './LoginSideBar';
 
 const cx = classNames.bind(styles);
 const PER_PAGE = 5;
@@ -25,6 +26,7 @@ const PER_PAGE = 5;
 function Sidebar() {
     const [suggestedUsers, setSuggestedUsers] = useState([]);
     const [followings, setFollowings] = useState([]);
+    const currentUser = false;
 
     useEffect(() => {
         // call Api User
@@ -43,7 +45,7 @@ function Sidebar() {
             })
             .catch((error) => console.log(error));
     }, []);
-    
+
     return (
         <aside className={cx('wrapper')}>
             {/* Menu sidebar */}
@@ -58,11 +60,13 @@ function Sidebar() {
                 <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
             </Menu>
 
+            {!currentUser && <LoginSideBar />}
+
             {/* Suggested accounts */}
             <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} />
 
             {/* Following accounts */}
-            <Following label="Following accounts" data={followings} />
+            {currentUser && <Following label="Following accounts" data={followings} />}
 
             {/* Discover */}
             <Discover label="Discover" />
