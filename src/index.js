@@ -14,7 +14,7 @@ root.render(
             {/* it's file name index.js */}
             <App />
         </GlobalStyles>,
-    {/* </React.StrictMode>, */}
+    // </React.StrictMode>,
 );
 
 reportWebVitals();

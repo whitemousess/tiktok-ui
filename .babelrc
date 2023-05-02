@@ -1,0 +1,14 @@
+// setup link module with module ~/  and file name  jsonconfig.json
+
+{
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "~": "./src"
+        }
+      }
+    ]
+  ]
+}

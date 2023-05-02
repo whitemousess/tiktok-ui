@@ -26,6 +26,7 @@ const PER_PAGE = 5;
 function Sidebar() {
     const [suggestedUsers, setSuggestedUsers] = useState([]);
     const [followings, setFollowings] = useState([]);
+
     const currentUser = false;
 
     useEffect(() => {
@@ -45,7 +46,7 @@ function Sidebar() {
             })
             .catch((error) => console.log(error));
     }, []);
-
+    
     return (
         <aside className={cx('wrapper')}>
             {/* Menu sidebar */}
