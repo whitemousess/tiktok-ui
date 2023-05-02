@@ -12,7 +12,7 @@ import { MusicIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import Button from '~/components/Button/button';
 import AccountPreview from './AccountPreview';
-import MenuShare from './MenuShare/MenuShare';
+import Share from '~/components/Share';
 
 const cx = classNames.bind(styles);
 
@@ -31,7 +31,7 @@ function VideoItem({ data }) {
         return (
             <div tabIndex="-1" {...props}>
                 <PopperWrapper>
-                    <MenuShare data={data} />
+                    <Share />
                 </PopperWrapper>
             </div>
         );
@@ -93,8 +93,8 @@ function VideoItem({ data }) {
                 <div className={cx('body')}>
                     <div className="video">
                         <ReactPlayer
-                            width="356px"
-                            height="630px"
+                            width="336px"
+                            height="600px"
                             playing={false}
                             volume={0.2}
                             controls
@@ -118,7 +118,7 @@ function VideoItem({ data }) {
                         </div>
 
                         <Tippy interactive
-                            delay={[800, 0]}
+                            delay={[0, 500]}
                             offset={[-20, 0]}
                             render={renderMenuShare}
                             placement={'bottom'}>
