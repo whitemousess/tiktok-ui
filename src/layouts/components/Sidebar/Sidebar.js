@@ -27,7 +27,7 @@ function Sidebar() {
     const [suggestedUsers, setSuggestedUsers] = useState([]);
     const [followings, setFollowings] = useState([]);
 
-    const currentUser = false;
+    const currentUser = true;
 
     useEffect(() => {
         // call Api User
