@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faEllipsisVertical,
@@ -88,9 +89,7 @@ const MENU_ITEMS = [
     },
 ];
 
-function Header() {
-    const currentUser = false;
-
+function Header({currentUser}) {
 
     // handle login
     const handleMenuChange = (MenuItem) => {

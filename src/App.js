@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import { useEffect, useState } from "react";
 
 // import environment Router , Routes ,Route
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -7,7 +8,19 @@ import { publicRoutes } from '~/routes';
 // import DefaultLayout 
 import { DefaultLayout } from '~/layouts';
 
+
 function App() {
+
+const [currentUser, setCurrentUser] = useState()
+    useEffect(() => {
+        const token = window.localStorage.token
+        if (token) {
+            setCurrentUser(true)
+        }else{
+            setCurrentUser(false)
+        }
+    }, [])
+
     return (
         //  user Router <Router></Router>
         <Router>
@@ -30,7 +43,7 @@ function App() {
                                 key={index}
                                 path={route.path}
                                 element={
-                                    <Layout>
+                                    <Layout currentUser={currentUser}>
                                         <Page />
                                     </Layout>
                                 }

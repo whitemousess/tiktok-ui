@@ -23,11 +23,10 @@ import LoginSideBar from './LoginSideBar';
 const cx = classNames.bind(styles);
 const PER_PAGE = 5;
 
-function Sidebar() {
+function Sidebar({currentUser}) {
     const [suggestedUsers, setSuggestedUsers] = useState([]);
     const [followings, setFollowings] = useState([]);
 
-    const currentUser = true;
 
     useEffect(() => {
         // call Api User
