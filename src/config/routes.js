@@ -1,14 +1,8 @@
-// move router 
+// move router
 
 const routes = {
-    home: '/',
-    following: '/following',
-    profile: '/profile',
-    settings: '/settings',
-    coin: '/coin',
-    upload: '/upload',
-    search: '/@:nickname',
-    live: '/live',
-}
+  home: "/",
+  user: "/user",
+};
 
 export default routes;
